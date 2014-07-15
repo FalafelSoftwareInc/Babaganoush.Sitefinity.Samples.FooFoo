@@ -1,4 +1,4 @@
-Babaganoush.Sitefinity.Samples.FooFoo
-=====================================
+Babaganoush for Sitefinity: Seed Project Sample
+==================================================
 
-Babaganoush Sitefinity sample seed project.
+Babaganoush Sample for extending the framework. See tutorial for more information: http://babaganoush.falafel.com/documentation/tutorials/extending-the-framework
