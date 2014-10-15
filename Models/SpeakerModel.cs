@@ -1,9 +1,10 @@
 ﻿using Babaganoush.Sitefinity.Extensions;
 using Babaganoush.Sitefinity.Models;
 using System.Collections.Generic;
+using Telerik.Sitefinity.DynamicModules;
 using Telerik.Sitefinity.DynamicModules.Model;
-using Telerik.Sitefinity.Model;
 using Telerik.Sitefinity.RelatedData;
+using Telerik.Sitefinity.Utilities.TypeConverters;
 
 namespace Babaganoush.Sitefinity.Samples.FooFoo.Models
 {
@@ -18,6 +19,7 @@ namespace Babaganoush.Sitefinity.Samples.FooFoo.Models
         public string Twitter { get; set; }
         public string Website { get; set; }
         public ImageModel Photo { get; set; }
+        public List<DocumentModel> eBooks { get; set; }
         public List<TaxonModel> Categories { get; set; }
         public List<TaxonModel> Tags { get; set; }
 
@@ -57,6 +59,7 @@ namespace Babaganoush.Sitefinity.Samples.FooFoo.Models
                 Twitter = sfContent.GetStringSafe("Twitter");
                 Website = sfContent.GetStringSafe("Website");
                 Photo = sfContent.GetImage("Photo");
+                eBooks = sfContent.GetDocuments("Ebooks");
                 Categories = sfContent.GetTaxa("Category");
                 Tags = sfContent.GetTaxa("Tags");
             }

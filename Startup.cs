@@ -1,24 +1,20 @@
-﻿using Babaganoush.Sitefinity.Models.Abstracts;
-using Babaganoush.Sitefinity.Mvc.Configuration;
-using Babaganoush.Sitefinity.Mvc.Routes;
-using Babaganoush.Sitefinity.Mvc.Web.Controllers;
+﻿using Babaganoush.Sitefinity.Application;
 using Babaganoush.Sitefinity.Utilities;
-using Babaganoush.Sitefinity.Samples.FooFoo;
-using Babaganoush.Sitefinity.Samples.FooFoo.Web.Controllers;
+using Babaganoush.Tests.FooFoo.Sitefinity;
+using Babaganoush.Tests.FooFoo.Sitefinity.Web.Controllers;
 using System.Web;
-using System.Web.Routing;
 using Telerik.Sitefinity.Abstractions;
 using Telerik.Sitefinity.Data;
 
 //Startup and Shutdown code into a web application. This gives a much cleaner
 //solution than having to modify global.asax with the startup logic from many packages.
-[assembly: PreApplicationStartMethod(typeof(Application), "PreInit")]
-namespace Babaganoush.Sitefinity.Samples.FooFoo
+[assembly: PreApplicationStartMethod(typeof(Startup), "PreInit")]
+namespace Babaganoush.Sitefinity.Samples.Sitefinity
 {
     /// <summary>
     /// Application_Start of the target site.
     /// </summary>
-    public class Application : BaseApplication<Application>
+    public class Startup : BaseStartup<Startup>
     {
         /// <summary>
         /// Will run when the application is starting (same as Application_Start)
@@ -45,7 +41,7 @@ namespace Babaganoush.Sitefinity.Samples.FooFoo
             if (e.CommandName == "RegisterRoutes")
             {
                 //REGISTER CUSTOM VIRTUAL PATH FOR SITEFINITY TEMPLATES
-                ConfigHelper.RegisterVirtualPath(Constants.VALUE_CUSTOM_VIRTUAL_ROOT_PATH + "/*", "Babaganoush.Sitefinity.Samples.FooFoo");
+                ConfigHelper.RegisterVirtualPath(Constants.VALUE_CUSTOM_VIRTUAL_ROOT_PATH + "/*", "Babaganoush.Tests.FooFoo.Sitefinity");
             }
         }
 
@@ -64,6 +60,11 @@ namespace Babaganoush.Sitefinity.Samples.FooFoo
                 ConfigHelper.RegisterToolboxWidget<SpeakersListController>(
                     title: "Speakers List",
                     description: "Displays list of speakers."
+                );
+
+                ConfigHelper.RegisterToolboxWidget<MyTestController>(
+                    title: "My Test",
+                    description: "Displays test with no model."
                 );
             }
         }
