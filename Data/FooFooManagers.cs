@@ -2,8 +2,9 @@
 
 namespace Babaganoush.Sitefinity.Samples.FooFoo.Data
 {
-    public class FooFooManager
+    public class FooFooManagers
     {
         public static SpeakersManager Speakers { get { return SpeakersManager.Instance; } }
+        public static SessionsManager Sessions { get { return SessionsManager.Instance; } }
     }
 }

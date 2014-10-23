@@ -5,13 +5,13 @@ using Telerik.Sitefinity.Security;
 
 namespace Babaganoush.Sitefinity.Samples.FooFoo.Api
 {
-    public class SpeakersController : BaseDynamicController<SpeakerModel>
+    public class SessionsController : BaseDynamicController<SessionModel>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="SpeakersController" /> class.
+        /// Initializes a new instance of the <see cref="SessionsController" /> class.
         /// </summary>
-        public SpeakersController()
-            : base(FooFooManagers.Speakers)
+        public SessionsController()
+            : base(FooFooManagers.Sessions)
         {
 
         }

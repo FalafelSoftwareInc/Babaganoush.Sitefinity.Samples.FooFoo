@@ -66,13 +66,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Api\SessionsController.cs" />
     <Compile Include="Api\SpeakersController.cs" />
-    <Compile Include="Application.cs" />
+    <Compile Include="Content\Managers\SessionsManager.cs" />
+    <Compile Include="Models\SessionModel.cs" />
+    <Compile Include="Startup.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Content\Managers\SpeakersManager.cs" />
-    <Compile Include="Data\FooFooManager.cs" />
+    <Compile Include="Data\FooFooManagers.cs" />
     <Compile Include="Models\SpeakerModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Web\Controllers\MyTestController.cs" />
     <Compile Include="Web\Controllers\SpeakersListController.cs" />
     <Compile Include="Web\ViewModels\SpeakersListViewModel.cs" />
   </ItemGroup>
@@ -102,6 +106,7 @@
     <None Include="Web.config">
       <SubType>Designer</SubType>
     </None>
+    <EmbeddedResource Include="Web\Views\MyTest\Index.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
